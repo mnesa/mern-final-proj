@@ -1,0 +1,31 @@
+.banner{
+  background: url(../../../assets/images/landing-bg.png) no-repeat center center/cover;
+}
+h1{
+  color: #3A4256;
+/* font-family: Open Sans; */
+font-size: 48px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+}
+p{
+  color: #3A4256;
+/* font-family: Open Sans; */
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.btn-primare{
+  border-radius: 8px;
+background: linear-gradient(90deg, #19D3AE -22.5%, #0FCFEC 120.83%);
+color: #FFF;
+/* font-family: Open Sans; */
+font-size: 14px;
+font-style: normal;
+font-weight: 700;
+line-height: normal;
+border: 0;
+padding: 15px;
+}
