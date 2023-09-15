@@ -1,0 +1,20 @@
+.contact{
+  background: url(../../../assets/images/bg-blue.png) 
+  no-repeat center center/cover;
+  padding: 2rem;
+}
+.contact button{
+ margin-left: 40% !important;
+ width: 120px;
+
+}
+
+
+@media (max-width:768px){
+  .contact .container{
+    width: 100% !important;
+    padding: 1rem !important;
+  }
+}
+
+

@@ -1,0 +1,7 @@
+.appointment{
+  background: url(../../../assets/images/bg-blue.png) no-repeat center center/cover;
+  margin: 200px 0 30px;
+}
+.appointment img{
+  margin-top: -110px;
+}
