@@ -25,6 +25,7 @@ const AvailableAppointments = ({ selectedDate }) => {
           <AppointmentOption
             key={option._id}
             appointmentOption={option}
+            selectedDate={selectedDate}
           ></AppointmentOption>
         ))}
       </div>

@@ -3,6 +3,8 @@ import Main from "../../Layout/Main";
 import Home from "../../Components/Home/Home";
 import About from "../../Components/About/About";
 import Appointment from "../../Components/Appointment/Appointment";
+import Login from "../../Components/Login/Login";
+import SignUp from "../../Components/SignUp/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -13,10 +15,7 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home></Home>,
       },
-      {
-        path: "/home",
-        element: <Home></Home>,
-      },
+
       {
         path: "/about",
         element: <About></About>,
@@ -24,6 +23,14 @@ const router = createBrowserRouter([
       {
         path: "/appointment",
         element: <Appointment></Appointment>,
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/signup",
+        element: <SignUp></SignUp>,
       },
     ],
   },
