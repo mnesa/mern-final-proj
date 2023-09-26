@@ -32,7 +32,7 @@ const Services = () => {
     <div className="py-5 my-5 text-center">
       <h5 className="text-primare">OUR SERVICES</h5>
       <h2>Services We Provide</h2>
-      <div class="row row-cols-1 row-cols-md-3 g-4 mx-4 my-5">
+      <div className="row row-cols-1 row-cols-md-3 g-4 mx-4 my-5">
         {services.map((service) => (
           <Service key={service.id} service={service}></Service>
         ))}

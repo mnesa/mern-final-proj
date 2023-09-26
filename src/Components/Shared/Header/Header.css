@@ -14,7 +14,7 @@ text-decoration: none;
   border-radius: 8px;
 background: #3A4256;
 padding: 11px 13px;
-color: white;
+color: white !important;
 }
 
 @media (max-width:768px){

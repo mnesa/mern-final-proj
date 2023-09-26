@@ -1,20 +1,53 @@
 import React from "react";
+import { useContext } from "react";
+import { useForm } from "react-hook-form";
 // import "./SignUp.css";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthProvider";
+import toast from "react-hot-toast";
 
 const Login = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const { signInUser } = useContext(AuthContext);
+
+  const handleLogin = (data) => {
+    console.log(data);
+    signInUser(data.email, data.password)
+      .then((result) => {
+        const user = result.user;
+        // console.log(user);
+        toast.success("Successfully Login!");
+      })
+      .catch((error) => console.log(error));
+  };
   return (
     <div className="signup d-flex justify-content-center align-items-center">
       <div className="form-parent">
         <h4 className="text-center">LOGIN</h4>
-        <form className="w-100">
-          <div class="mb-3">
-            <label class="form-label">Email</label>
-            <input type="email" class="form-control" />
+        <form onSubmit={handleSubmit(handleLogin)} className="w-100">
+          <div className="mb-3">
+            <label className="form-label">Email</label>
+            <input
+              {...register("email", { required: "Email is required" })}
+              type="email"
+              className="form-control"
+            />
+            {errors.email && (
+              <p className="text-danger mt-1"> {errors.email.message} </p>
+            )}
           </div>
-          <div class="mb-3">
-            <label class="form-label">Password</label>
-            <input type="password" class="form-control" />
+          <div className="mb-3">
+            <label className="form-label">Password</label>
+            <input
+              {...register("password", { required: true })}
+              type="password"
+              className="form-control"
+            />
           </div>
           <p>Forget Password ?</p>
 

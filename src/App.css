@@ -7,3 +7,11 @@
 .bg-primare{
   background: linear-gradient(90deg, #19D3AE -22.5%, #0FCFEC 120.83%);
 }
+.btn-2nd{
+  padding: 6px 10px;
+  background: #3a4256;
+  color: white;
+  margin: 10px;
+  border-radius: 8px;
+  border: 0;
+}

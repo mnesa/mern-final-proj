@@ -20,7 +20,7 @@ const AvailableAppointments = ({ selectedDate }) => {
         <p>Please select a service.</p>
       </div>
 
-      <div class="row row-cols-1 row-cols-md-3 g-4 mx-4 my-5">
+      <div className="row row-cols-1 row-cols-md-3 g-4 mx-4 my-5">
         {appointmentOptions.map((option) => (
           <AppointmentOption
             key={option._id}

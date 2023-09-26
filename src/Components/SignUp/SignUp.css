@@ -28,6 +28,10 @@ height: 48px;
 border-radius: 8px;
 background: #3A4256;
 color: white;
+transition: all 0.3s linear;
+}
+.signup-btn:hover{
+  background: #4c5260;
 }
 .google-btn{
   width: 327px;
