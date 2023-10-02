@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import BookingModal from "../BookingModal/BookingModal";
 
-const AppointmentOption = ({ appointmentOption, selectedDate }) => {
+const AppointmentOption = ({ appointmentOption, selectedDate, refetch }) => {
   const { name, slots } = appointmentOption;
 
   const [treatment, setTreatment] = useState(null);
@@ -35,6 +35,7 @@ const AppointmentOption = ({ appointmentOption, selectedDate }) => {
       </div>
       {treatment && (
         <BookingModal
+          refetch={refetch}
           show={show}
           handleClose={handleClose}
           treatment={treatment}

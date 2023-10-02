@@ -5,6 +5,7 @@ import About from "../../Components/About/About";
 import Appointment from "../../Components/Appointment/Appointment";
 import Login from "../../Components/Login/Login";
 import SignUp from "../../Components/SignUp/SignUp";
+import PrivateRouter from "../PrivateRouter/PrivateRouter";
 
 const router = createBrowserRouter([
   {
@@ -22,7 +23,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/appointment",
-        element: <Appointment></Appointment>,
+        element: (
+          <PrivateRouter>
+            <Appointment></Appointment>
+          </PrivateRouter>
+        ),
       },
       {
         path: "/login",

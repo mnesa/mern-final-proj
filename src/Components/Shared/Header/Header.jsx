@@ -72,11 +72,12 @@ const Header = () => {
                   {/* <li className="nav-item">
                     <img src={user.photoURL} alt="photo" />
                   </li> */}
-                  <li className="nav-item m-2 mt-4 text-primary fw-bold">
+                  {/* <li className="nav-item m-2 mt-4 text-primary fw-bold">
                     {user.displayName}
-                  </li>
+                  </li> */}
                   <button onClick={handleLogOut} className="btn-2nd">
-                    Sign Out
+                    {user.displayName} <br />
+                    <h6>Sign Out</h6>
                   </button>
                 </>
               ) : (

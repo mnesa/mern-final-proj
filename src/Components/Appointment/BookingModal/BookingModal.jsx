@@ -1,9 +1,12 @@
 import { format } from "date-fns";
 import React from "react";
+import { useContext } from "react";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
+import { AuthContext } from "../../../Context/AuthProvider";
+import toast from "react-hot-toast";
 
 const BookingModal = ({
   show,
@@ -11,8 +14,10 @@ const BookingModal = ({
   treatment,
   selectedDate,
   setTreatment,
+  refetch,
 }) => {
   const { name, slots } = treatment;
+  const { user } = useContext(AuthContext);
 
   const date = format(selectedDate, "PP");
 
@@ -33,7 +38,29 @@ const BookingModal = ({
       email,
       phone,
     };
+
+    //send the data to server
+    // alert /toast
     console.log(booking);
+
+    fetch("http://localhost:3000/bookings", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(booking),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        if (data.acknowledged) {
+          toast.success("Booking Confirmed");
+          refetch();
+        } else {
+          toast.error(data.message);
+        }
+      });
+
     setTreatment(null);
   };
   return (
@@ -57,7 +84,13 @@ const BookingModal = ({
               </Form.Select>
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Control name="name" type="text" placeholder="Full Name" />
+              <Form.Control
+                defaultValue={user?.displayName}
+                readOnly
+                name="name"
+                type="text"
+                placeholder="Full Name"
+              />
             </Form.Group>
 
             <Form.Group className="mb-3">
@@ -68,7 +101,13 @@ const BookingModal = ({
               />
             </Form.Group>
             <Form.Group className="mb-3">
-              <Form.Control name="email" type="email" placeholder="Email" />
+              <Form.Control
+                defaultValue={user?.email}
+                readOnly
+                name="email"
+                type="email"
+                placeholder="Email"
+              />
             </Form.Group>
 
             <Button className="btn btn-secondary w-100" type="submit">
