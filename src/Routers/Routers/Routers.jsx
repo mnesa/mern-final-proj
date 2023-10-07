@@ -6,6 +6,9 @@ import Appointment from "../../Components/Appointment/Appointment";
 import Login from "../../Components/Login/Login";
 import SignUp from "../../Components/SignUp/SignUp";
 import PrivateRouter from "../PrivateRouter/PrivateRouter";
+import MyAppointment from "../../Components/Dashboard/MyAppointMent/MyAppointment";
+import DashboardLayout from "../../Layout/DashboardLayout";
+import AllUsers from "../../Components/Dashboard/AllUsers/AllUsers";
 
 const router = createBrowserRouter([
   {
@@ -36,6 +39,20 @@ const router = createBrowserRouter([
       {
         path: "/signup",
         element: <SignUp></SignUp>,
+      },
+    ],
+  },
+  {
+    path: "/dashboard",
+    element: <DashboardLayout></DashboardLayout>,
+    children: [
+      {
+        path: "/dashboard",
+        element: <MyAppointment></MyAppointment>,
+      },
+      {
+        path: "/dashboard/allusers",
+        element: <AllUsers></AllUsers>,
       },
     ],
   },

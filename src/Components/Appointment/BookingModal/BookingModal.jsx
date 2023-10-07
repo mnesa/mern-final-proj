@@ -41,7 +41,7 @@ const BookingModal = ({
 
     //send the data to server
     // alert /toast
-    console.log(booking);
+    // console.log(booking);
 
     fetch("http://localhost:3000/bookings", {
       method: "POST",

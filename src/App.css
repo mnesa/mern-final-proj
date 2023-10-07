@@ -7,6 +7,9 @@
 .bg-primare{
   background: linear-gradient(90deg, #19D3AE -22.5%, #0FCFEC 120.83%);
 }
+.bg-Secandree{
+  background:  #d6d8e4 ;
+}
 .btn-2nd{
   padding: 6px 10px;
   background: #3a4256;
@@ -14,4 +17,7 @@
   margin: 10px;
   border-radius: 8px;
   border: 0;
+}
+.m-top{
+  margin-top: 120px;
 }
