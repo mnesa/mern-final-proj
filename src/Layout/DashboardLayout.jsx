@@ -22,9 +22,15 @@ const DashboardLayout = () => {
           >
             All Users
           </NavLink>
+          <NavLink
+            className="nav-link ps-5 py-2 fw-medium text-secondary"
+            to="/dashboard/add-doctor"
+          >
+            Add Doctor
+          </NavLink>
         </div>
-        {/* body */}
-        <div className="w-75 bg-Secandree vh-100">
+        {/* body-container */}
+        <div className="w-75 bg-Secandree h-100">
           <Outlet></Outlet>
         </div>
       </div>

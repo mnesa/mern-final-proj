@@ -9,6 +9,7 @@ import PrivateRouter from "../PrivateRouter/PrivateRouter";
 import MyAppointment from "../../Components/Dashboard/MyAppointMent/MyAppointment";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import AllUsers from "../../Components/Dashboard/AllUsers/AllUsers";
+import AddDoctor from "../../Components/Dashboard/AddDoctor/AddDoctor";
 
 const router = createBrowserRouter([
   {
@@ -53,6 +54,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard/allusers",
         element: <AllUsers></AllUsers>,
+      },
+      {
+        path: "/dashboard/add-doctor",
+        element: <AddDoctor></AddDoctor>,
       },
     ],
   },

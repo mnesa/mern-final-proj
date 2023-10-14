@@ -1,12 +1,13 @@
 import React, { useContext } from "react";
 import "./SignUp.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import { AuthContext } from "../../Context/AuthProvider";
 import toast from "react-hot-toast";
 
 const SignUp = () => {
   const { createUser, updateUser } = useContext(AuthContext);
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -18,15 +19,32 @@ const SignUp = () => {
       .then((result) => {
         const user = result.user;
         // console.log(user);
-        toast.success("Successfully User Created.");
+        toast.success("Successfully User Created 00.");
         const userInfo = {
           displayName: data.name,
         };
         updateUser(userInfo)
-          .then(() => {})
+          .then(() => {
+            savedUser(data.name, data.email);
+          })
           .catch((err) => console.log(err));
       })
       .catch((error) => console.log(error));
+  };
+  const savedUser = (name, email) => {
+    const user = { name, email };
+    fetch("http://localhost:3000/users", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(user),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        navigate("/appointment");
+      });
   };
   return (
     <div className="signup d-flex justify-content-center align-items-center">
