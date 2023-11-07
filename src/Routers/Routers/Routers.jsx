@@ -10,6 +10,9 @@ import MyAppointment from "../../Components/Dashboard/MyAppointMent/MyAppointmen
 import DashboardLayout from "../../Layout/DashboardLayout";
 import AllUsers from "../../Components/Dashboard/AllUsers/AllUsers";
 import AddDoctor from "../../Components/Dashboard/AddDoctor/AddDoctor";
+import ManageDoctors from "../../Components/Dashboard/ManageDoctors/ManageDoctors";
+import AddNewDoctor from "../../Components/Dashboard/AddNewDoctor/AddNewDoctor";
+import AdminRouter from "../AdminRouter/AdminRouter";
 
 const router = createBrowserRouter([
   {
@@ -45,7 +48,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <DashboardLayout></DashboardLayout>,
+    element: (
+      <PrivateRouter>
+        <DashboardLayout></DashboardLayout>
+      </PrivateRouter>
+    ),
     children: [
       {
         path: "/dashboard",
@@ -53,11 +60,35 @@ const router = createBrowserRouter([
       },
       {
         path: "/dashboard/allusers",
-        element: <AllUsers></AllUsers>,
+        element: (
+          <AdminRouter>
+            <AllUsers></AllUsers>
+          </AdminRouter>
+        ),
       },
       {
         path: "/dashboard/add-doctor",
-        element: <AddDoctor></AddDoctor>,
+        element: (
+          <AdminRouter>
+            <AddDoctor></AddDoctor>
+          </AdminRouter>
+        ),
+      },
+      {
+        path: "/dashboard/addNewDoctor",
+        element: (
+          <AdminRouter>
+            <AddNewDoctor></AddNewDoctor>
+          </AdminRouter>
+        ),
+      },
+      {
+        path: "/dashboard/manage-doctors",
+        element: (
+          <AdminRouter>
+            <ManageDoctors></ManageDoctors>
+          </AdminRouter>
+        ),
       },
     ],
   },

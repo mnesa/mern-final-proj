@@ -6,6 +6,7 @@ import ExceptionalDental from "./ExceptionalDental/ExceptionalDental";
 import MakeAppointment from "./MakeAppointment/MakeAppointment";
 import Reviews from "./Reviews/Reviews";
 import Contact from "./Contact/Contact";
+import Doctors from "./Doctors/Doctors";
 
 const Home = () => {
   useEffect(() => {
@@ -16,6 +17,7 @@ const Home = () => {
       <Banner></Banner>
       <InfoCards></InfoCards>
       <Services></Services>
+      <Doctors></Doctors>
       <ExceptionalDental />
       <MakeAppointment />
       <Reviews />
