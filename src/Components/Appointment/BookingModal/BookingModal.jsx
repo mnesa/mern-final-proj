@@ -16,7 +16,7 @@ const BookingModal = ({
   setTreatment,
   refetch,
 }) => {
-  const { name, slots } = treatment;
+  const { name, slots, price } = treatment;
   const { user } = useContext(AuthContext);
 
   const date = format(selectedDate, "PP");
@@ -37,6 +37,7 @@ const BookingModal = ({
       slot,
       email,
       phone,
+      price,
     };
 
     //send the data to server

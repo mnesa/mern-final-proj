@@ -3,7 +3,7 @@ import Button from "react-bootstrap/Button";
 import BookingModal from "../BookingModal/BookingModal";
 
 const AppointmentOption = ({ appointmentOption, selectedDate, refetch }) => {
-  const { name, slots } = appointmentOption;
+  const { name, slots, price } = appointmentOption;
 
   const [treatment, setTreatment] = useState(null);
 
@@ -22,6 +22,9 @@ const AppointmentOption = ({ appointmentOption, selectedDate, refetch }) => {
             </p>
             <p className="text-secondary">
               {slots.length} {slots.length > 1 ? "spaces" : "space"} Available
+            </p>
+            <p>
+              <small>Price: {price}</small>
             </p>
             <button
               disabled={slots.length === 0}
